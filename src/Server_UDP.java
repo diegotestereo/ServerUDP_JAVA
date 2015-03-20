@@ -22,7 +22,9 @@ try {
 	while(true){
 		byte[] miBuffer= new byte[1024];
 		DatagramPacket peticion=new DatagramPacket(miBuffer, miBuffer.length);
+		System.out.println("Esperando Mensaje");
 		miSocket.receive(peticion);
+		  System.out.println("Mensaje recibido...");
 		System.out.println("IP: "+peticion.getAddress());
 		System.out.println("Puerto: "+peticion.getPort());
 		System.out.println("Mensaje: "+new String(peticion.getData(),0,peticion.getLength()));
@@ -40,10 +42,10 @@ try {
 	
 } catch (SocketException e) {
 	// TODO Auto-generated catch block
-	e.printStackTrace();
+	  System.out.println(e);
 }catch (IOException e) {
 	// TODO Auto-generated catch block
-	e.printStackTrace();
+	 System.out.println(e);
 }
 	}
 
